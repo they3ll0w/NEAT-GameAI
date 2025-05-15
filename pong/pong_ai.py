@@ -211,7 +211,7 @@ def run_neat(config, checkpoint=None, generations=50):
     winner = p.run(eval_genomes, generations)
     
     # Save the winner
-    with open("best.pickle", "wb") as f:
+    with open("pong/best.pickle", "wb") as f:
         pickle.dump(winner, f)
     
     return winner
@@ -227,7 +227,7 @@ def test_ai(config):
     width, height = 700, 500
     window = pygame.display.set_mode((width, height))
 
-    with open("best.pickle", "rb") as f:
+    with open("pong/best.pickle", "rb") as f:
         winner = pickle.load(f)
 
     game = PongGame(window, width, height)
